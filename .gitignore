@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Next.js build files
+.next/
+out/
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+
+# Local database
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Logs
+*.log
+
+# Temporary files
+.DS_Store
+Thumbs.db

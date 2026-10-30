@@ -1,0 +1,1 @@
+import './globals.css';export const metadata={title:'The Human Footnote | Independent Storytelling',description:'Stories worth staying with. People, places and perspectives beyond the headlines.'};export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}

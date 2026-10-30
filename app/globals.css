@@ -1,0 +1,962 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ==========================================
+   THE HUMAN FOOTNOTE
+   GLOBAL DESIGN SYSTEM
+   ========================================== */
+
+:root {
+  --ink: #263238;
+  --copper: #B0C340;
+  --cream: #F3F4F2;
+  --line: #D7DFE3;
+  --muted: #526775;
+
+  --blue: #245B82;
+  --blue-dark: #183E5B;
+  --lime: #B0C340;
+  --lime-dark: #718515;
+  --lime-light: #D1E478;
+  --paper: #F3F4F2;
+  --white: #FFFFFF;
+
+  --surface-blue: #EEF3F6;
+  --surface-hover: #DCEAF2;
+  --border-blue: #B8C9D2;
+}
+
+/* ==========================================
+   BASE STYLES
+   ========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  color: var(--blue-dark);
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--lime-dark);
+}
+
+/* ==========================================
+   PUBLIC WEBSITE HEADER
+   ========================================== */
+
+.masthead {
+  max-width: 1240px;
+  margin: auto;
+  padding: 25px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--lime);
+  gap: 18px;
+}
+
+.brand {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--blue-dark);
+}
+
+.brand span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.masthead nav {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+}
+
+.masthead nav a {
+  color: var(--blue-dark);
+  transition: color 0.2s ease;
+}
+
+.masthead nav a:hover {
+  color: var(--lime-dark);
+}
+
+/* ==========================================
+   HOMEPAGE INTRODUCTION
+   ========================================== */
+
+.intro {
+  text-align: center;
+  padding: 85px 20px 70px;
+}
+
+.intro h1 {
+  font-size: clamp(56px, 9vw, 112px);
+  line-height: 1.03;
+  letter-spacing: -4px;
+  margin: 24px 0;
+}
+
+.intro h1 em {
+  color: var(--lime-dark);
+}
+
+.intro > p:last-child {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+/* ==========================================
+   FEATURED HERO STORY
+   ========================================== */
+
+.hero-story {
+  max-width: 1180px;
+  margin: auto;
+  display: block;
+  position: relative;
+  min-height: 520px;
+  background: var(--blue-dark);
+  overflow: hidden;
+}
+
+.hero-image,
+.hero-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-image:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(24, 62, 91, 0.90),
+    rgba(24, 62, 91, 0.08)
+  );
+}
+
+.hero-overlay {
+  position: relative;
+  color: var(--white);
+  max-width: 600px;
+  padding: 110px 60px;
+}
+
+.hero-overlay h2 {
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.12;
+  margin: 16px 0;
+  color: var(--white);
+}
+
+.hero-overlay p {
+  line-height: 1.7;
+}
+
+.hero-overlay .eyebrow {
+  color: var(--lime-light);
+}
+
+.hero-overlay > span:last-child {
+  display: inline-block;
+  margin-top: 20px;
+  border-bottom: 1px solid var(--white);
+  padding-bottom: 7px;
+}
+
+/* ==========================================
+   STORIES SECTION
+   ========================================== */
+
+.stories-section {
+  max-width: 1180px;
+  margin: 95px auto;
+  padding: 0 24px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.section-head h2 {
+  font-size: 42px;
+  margin: 10px 0 22px;
+}
+
+.section-head > span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ==========================================
+   SEARCH AND CATEGORY FILTERS
+   ========================================== */
+
+.filter-bar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+}
+
+.filter-bar input {
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  min-width: 220px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 9px 13px;
+  font-size: 12px;
+  color: var(--blue-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.filters button:hover,
+.filters button.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+/* ==========================================
+   ARTICLE CARDS
+   ========================================== */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px 26px;
+}
+
+.article-card .card-image {
+  height: 235px;
+  overflow: hidden;
+  background: #DCE7ED;
+  margin-bottom: 20px;
+}
+
+.article-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.article-card:hover img {
+  transform: scale(1.04);
+}
+
+.image-fallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: #D9E5EC;
+  color: var(--blue-dark);
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.article-card h3 {
+  font-size: 28px;
+  line-height: 1.22;
+  margin: 12px 0;
+  color: var(--blue-dark);
+}
+
+.article-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.article-card small {
+  font-size: 11px;
+}
+
+/* ==========================================
+   ABOUT SECTION
+   ========================================== */
+
+.about-band {
+  background: var(--blue-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 100px 24px;
+}
+
+.about-band h2,
+.subscribe-band h2 {
+  font-size: clamp(38px, 5vw, 64px);
+  margin: 20px 0;
+}
+
+.about-band h2 {
+  color: var(--white);
+}
+
+.about-band .eyebrow {
+  color: var(--lime-light);
+}
+
+.about-band p:last-child {
+  max-width: 670px;
+  margin: auto;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   SUBSCRIBE SECTION
+   ========================================== */
+
+.subscribe-band {
+  text-align: center;
+  padding: 100px 24px;
+  background: var(--paper);
+}
+
+.subscribe-band p {
+  color: var(--muted);
+}
+
+.subscribe-band span {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 12px;
+  border: 1px solid var(--line);
+  padding: 12px 20px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+  padding: 36px max(24px, calc((100vw - 1180px) / 2));
+  background: var(--blue);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+footer strong {
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+}
+
+footer a:hover {
+  color: var(--lime-light);
+}
+
+/* ==========================================
+   ARTICLE READING PAGE
+   ========================================== */
+
+.reading {
+  max-width: 820px;
+  margin: 80px auto 120px;
+  padding: 0 24px;
+}
+
+.reading h1 {
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: 1.1;
+  margin: 16px 0 25px;
+  color: var(--blue-dark);
+}
+
+.reading-dek {
+  font-size: 22px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.byline {
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
+  margin-top: 30px;
+}
+
+.reading figure {
+  margin: 20px 0 45px;
+}
+
+.reading figure img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.reading figcaption {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 9px;
+}
+
+.article-body {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.95;
+  color: var(--ink);
+}
+
+.article-body p {
+  margin: 0 0 28px;
+  white-space: pre-wrap;
+}
+
+.article-body a {
+  color: #145C91;
+  text-decoration: underline;
+}
+
+.article-body blockquote {
+  border-left: 4px solid var(--lime);
+  margin: 24px 0;
+  padding: 8px 22px;
+  background: var(--surface-blue);
+}
+
+.article-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article-body figure {
+  margin: 24px 0;
+}
+
+.article-body figcaption {
+  font: 12px 'DM Sans', sans-serif;
+  color: var(--muted);
+}
+
+.reading-end {
+  margin-top: 65px;
+  border-top: 1px solid var(--line);
+  padding-top: 30px;
+}
+
+/* ==========================================
+   ADMIN DASHBOARD
+   ========================================== */
+
+.admin-shell {
+  max-width: 1250px;
+  margin: 50px auto 100px;
+  padding: 0 24px;
+  color: var(--ink);
+}
+
+.admin-shell h1 {
+  font-size: clamp(38px, 5vw, 58px);
+  margin: 12px 0 30px;
+  color: var(--blue-dark);
+}
+
+.admin-top,
+.admin-actions,
+.row-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.admin-actions {
+  justify-content: flex-start;
+  margin: 25px 0 35px;
+}
+
+.admin-actions a:not(.primary) {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   ADMIN PANELS
+   ========================================== */
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.panel h2 {
+  font-size: 26px;
+  margin: 0 0 22px;
+  color: var(--blue-dark);
+}
+
+.narrow {
+  max-width: 520px;
+}
+
+/* ==========================================
+   ADMIN FORMS
+   ========================================== */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form input,
+.form textarea,
+.form select {
+  padding: 12px 14px;
+  border: 1px solid #BFCED7;
+  border-radius: 4px;
+  background: var(--white);
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form .check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form .check input {
+  width: auto;
+}
+
+/* ==========================================
+   ADMIN BUTTONS
+   ========================================== */
+
+.primary {
+  display: inline-block;
+  background: var(--blue);
+  border: 0;
+  border-radius: 4px;
+  padding: 13px 22px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.primary:hover {
+  background: var(--blue-dark);
+  color: var(--white);
+}
+
+.quiet {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--blue-dark);
+  padding: 10px 15px;
+}
+
+.quiet:hover {
+  background: #EAF1F5;
+  color: var(--blue-dark);
+}
+
+.danger {
+  border: 0;
+  background: none;
+  color: #A34031;
+  padding: 5px;
+}
+
+/* ==========================================
+   ADMIN STATISTICS
+   ========================================== */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.stat-grid .panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-grid strong {
+  font-size: 35px;
+  font-family: Georgia, serif;
+  color: var(--blue);
+}
+
+.stat-grid span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ==========================================
+   ADMIN STORY LIST
+   ========================================== */
+
+.story-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  align-items: center;
+}
+
+.story-row p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 6px 0;
+}
+
+.row-actions {
+  justify-content: flex-end;
+  font-size: 12px;
+}
+
+.row-actions a {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   ARTICLE STATUS
+   ========================================== */
+
+.status {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.status.published {
+  color: #52710F;
+}
+
+.status.draft {
+  color: #92601B;
+}
+
+/* ==========================================
+   MESSAGES AND ALERTS
+   ========================================== */
+
+.hint {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hint a {
+  text-decoration: underline;
+}
+
+.alert {
+  padding: 12px;
+  background: #FFF0E8;
+  color: #8B3D26;
+}
+
+/* ==========================================
+   EDITOR LAYOUT
+   ========================================== */
+
+.editor-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 20px;
+}
+
+.editor-grid .panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.body-editor {
+  min-height: 450px;
+}
+
+/* ==========================================
+   V3 RICH TEXT EDITOR
+   ========================================== */
+
+.editor-toolbar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: var(--surface-blue);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.editor-toolbar button {
+  padding: 7px 11px;
+  border: 1px solid var(--border-blue);
+  background: var(--white);
+  border-radius: 4px;
+  color: var(--blue-dark);
+}
+
+.editor-toolbar button:hover {
+  background: var(--surface-hover);
+}
+
+.editor-preview {
+  min-height: 260px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 6px;
+  line-height: 1.8;
+}
+
+.editor-preview h2 {
+  font-size: 32px;
+}
+
+.editor-preview h3 {
+  font-size: 24px;
+}
+
+.editor-preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+.editor-preview blockquote {
+  border-left: 4px solid var(--lime);
+  margin: 24px 0;
+  padding: 8px 22px;
+  background: var(--surface-blue);
+}
+
+.editor-preview a {
+  color: #145C91;
+  text-decoration: underline;
+}
+
+.editor-preview figure {
+  margin: 24px 0;
+}
+
+.editor-preview figcaption {
+  font: 12px 'DM Sans', sans-serif;
+  color: var(--muted);
+}
+
+/* ==========================================
+   MEDIA LIBRARY
+   ========================================== */
+
+.media-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fill, minmax(170px, 1fr));
+  gap: 15px;
+}
+
+.media-tile {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 10px;
+  overflow: hidden;
+}
+
+.media-tile img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.media-tile code {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+
+/* ==========================================
+   REVISION HISTORY
+   ========================================== */
+
+.revisions {
+  margin-top: 24px;
+}
+
+.revisions li {
+  margin: 10px 0;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN — TABLETS
+   ========================================== */
+
+@media (max-width: 800px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .editor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-overlay {
+    padding: 90px 30px;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN — MOBILE
+   ========================================== */
+
+@media (max-width: 540px) {
+  .masthead {
+    flex-direction: column;
+  }
+
+  .masthead nav {
+    gap: 20px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    padding: 65px 18px;
+  }
+
+  .intro h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-story {
+    min-height: 470px;
+  }
+
+  .section-head h2 {
+    font-size: 34px;
+  }
+
+  .story-row {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .reading {
+    margin-top: 50px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+}
